@@ -8,9 +8,11 @@ plt.grid()
 #x = [1, 2, 3, 4, 5, 6]
 #y = [1, 1.42, 1.76, 2, 2.24, 2.5]
 x1=np.arange(0,7,0.01)
-v, p = np.polyfit(x, y, deg=4, cov=True)
-p_f = np.poly1d(v)
-
-plt.plot(x1, p_f(x1))
+v1, p1 = np.polyfit(x, y, deg=1, cov=True)
+p_f1 = np.poly1d(v1)
+v2, p2 = np.polyfit(x, y, deg=2, cov=True)
+p_f2 = np.poly1d(v2)
+plt.plot(x1, p_f1(x1))
+plt.plot(x1, p_f2(x1))
 
 plt.show()
